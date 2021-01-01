@@ -29,4 +29,4 @@ YourApps Page:
 <img src="https://user-images.githubusercontent.com/35567444/103439044-8a403580-4c5f-11eb-8f0d-69cd4a412816.jpg" width="300" height="621">
 
 Sidebar Page:
-<img src="https://user-images.githubusercontent.com/35567444/103439044-8a403580-4c5f-11eb-8f0d-69cd4a412816.jpg" width="300" height="621">
+<img src="https://user-images.githubusercontent.com/35567444/103439134-64676080-4c60-11eb-9ed5-7f458dca53e5.jpg" width="300" height="621">
