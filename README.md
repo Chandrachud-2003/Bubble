@@ -17,7 +17,7 @@ Home Page:
 <img src="https://user-images.githubusercontent.com/35567444/103438870-f0c45400-4c5d-11eb-9e34-f2b7bd9e0482.jpg" width="300" height="621">
 
 Timer Page:
-<img src="https://user-images.githubusercontent.com/35567444/103438870-f0c45400-4c5d-11eb-9e34-f2b7bd9e0482.jpg" width="300" height="621">
+<img src="https://user-images.githubusercontent.com/35567444/103439018-5402b600-4c5f-11eb-97b9-1488d4fdc82f.jpg" width="300" height="621">
 
 GoalCenter Page:
 <img src="https://user-images.githubusercontent.com/35567444/103438967-bc04cc80-4c5e-11eb-81dc-680e3293e5df.png" width="300" height="621">
