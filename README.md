@@ -24,7 +24,7 @@ GoalCenter Page:
 
 Timeline page:
 <img src="https://user-images.githubusercontent.com/35567444/103439200-ca53e800-4c60-11eb-9575-1b03fac1d6fd.jpg" width="300" height="621">
-<img src="https://user-images.githubusercontent.com/35567444/103439200-ca53e800-4c60-11eb-9575-1b03fac1d6fd.jpg" width="300" height="621">
+<img src="https://user-images.githubusercontent.com/35567444/103439212-eeafc480-4c60-11eb-8091-7ed49e889ecb.jpg" width="300" height="621">
 
 YourApps Page:
 <img src="https://user-images.githubusercontent.com/35567444/103439044-8a403580-4c5f-11eb-8f0d-69cd4a412816.jpg" width="300" height="621">
