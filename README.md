@@ -11,4 +11,14 @@ Regarding the development of the app, it was made from scratch with Android Stud
 employs Gradle for Internal app management and library implementation. Ad Integration was also included in the App, developed with the Google Admob Interface 
 and includes Interstitial and Banner Ads.
 
+A few screenshots:
 
+Home Page:
+
+Timer Page:
+
+GoalCenter Page:
+
+Timeline page:
+
+YourApps Page:
