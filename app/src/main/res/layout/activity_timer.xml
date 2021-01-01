@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainBackground"
+    tools:context=".TimerActivity">
+
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/timerWave"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:mwhStartColor="@color/timerWaveStartColor"
+        app:mwhCloseColor="@color/timerWaveEndColor"
+        app:mwhColorAlpha="0.5"
+
+        />
+
+    <com.robinhood.ticker.TickerView
+
+        android:id="@+id/mainTimerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:ticker_animationDuration="1500"
+        app:ticker_defaultPreferredScrollingDirection="up" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:elevation="10dp"
+        android:padding="5dp"
+        android:src="@drawable/icons8_stop"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <ImageButton
+        android:id="@+id/startTimerButton"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:src="@drawable/icons8_play_timer"
+        app:layout_constraintTop_toBottomOf="@+id/timerSeekBar"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.github.stefanodp91.android.circularseekbar.CircularSeekBar
+        android:id="@+id/timerSeekBar"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:cs_arcRadius="120dp"
+        app:cs_dynamic_text_color="false"
+        app:cs_indicator_enabled="true"
+        app:cs_progress="0"
+        app:cs_text=""
+        app:cs_color_list="@array/color_list"
+        app:cs_indicatorRadius="12dp"
+        app:cs_progressWidth="3dp"
+        app:cs_arcWidth="2dp"
+        app:cs_step="1"
+        app:cs_text_color="@color/transparent"
+        app:cs_text_progress="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/menuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:src="@drawable/icons8_menu"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="25dp"
+
+        />
+
+
+
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

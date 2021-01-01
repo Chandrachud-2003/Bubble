@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    android:layout_margin="7dp"
+    android:background="@drawable/radar_stats_heading_bg">
+
+    <com.gelitenight.waveview.library.WaveView
+        android:id="@+id/distributionWave"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/relativeDistributionItem"
+        android:padding="20dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/app_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icons8_word"
+            android:background="@color/transparent"
+            app:civ_border_width="0dp"
+            app:civ_border_color="@color/transparent"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <TextView
+            android:id="@+id/appNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:text="Whatsapp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <TextView
+            android:id="@+id/appUsageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:text="2hrs 15 min"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/montserrat"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <TextView
+            android:id="@+id/changeUsageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="19sp"
+            android:textColor="@color/pPText"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/montserrat"
+            android:layout_gravity="center_horizontal"
+            android:text="+15 %"
+
+            />
+
+        <TextView
+            android:id="@+id/sinceUsageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:text="Since yesterday"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/montserrat"
+            />
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="10dp"
+    app:cardCornerRadius="20dp"
+    android:layout_marginHorizontal="15dp"
+    app:cardBackgroundColor="@color/cubicLineGraphBack">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingVertical="15dp"
+        android:paddingHorizontal="15dp"
+
+
+
+        >
+
+        <ImageView
+            android:id="@+id/appIconType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:src="@drawable/icons8_whatsapp_type"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <TextView
+            android:id="@+id/appNameType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:text="WhatsApp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            />
+
+        <TextView
+            android:id="@+id/appNameType2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_gravity="center_horizontal"
+            android:text="Academy Sample"
+            />
+
+        <TextView
+            android:id="@+id/todayBubblePercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/pPText"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:layout_marginTop="0dp"
+            android:text="15%"
+            android:textSize="16sp"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <TextView
+            android:id="@+id/todayBubbleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/pPText"
+            android:layout_gravity="center_horizontal"
+            android:text="Of Today's Bubble"
+            android:textSize="10sp"
+            />
+
+
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

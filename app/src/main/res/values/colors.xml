@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="mainBackground">#0A0F2D</color>
+
+    <color name="menuNotSelected">#707cc2</color>
+
+    <color name="radarHeadingColor">#0e153f</color>
+
+    <color name="toggleOffColor">#D3D3D3</color>
+
+    <color name="cubicLineGraphBack">#1A1F3D</color>
+    <color name="nPText">#f03145</color>
+    <color name="pPText">#21e8c7</color>
+
+    <color name="toggleColor">#21e8c7</color>
+    
+    <color name="positiveEnergyText">#F0FFF0</color>
+    <color name="negativeEnergyText">#faf0e6</color>
+
+    <color name="white">#FFFFFF</color>
+
+    <color name="timeLineChartLow">#C21651</color>
+    <color name="timeLineChartHigh">#2493A1</color>
+
+    <color name="timeLineRed">#DA3834</color>
+    <color name="timeLineBlue">#26978C</color>
+
+    <color name="barChartStartColor">#01B075</color>
+
+    <color name="barChartEndColor">#01AF74</color>
+
+    <color name="timerWaveStartColor">#55559B</color>
+
+    <color name="timerWaveEndColor">#90CEEA</color>
+
+    <color name="darkGray">#A9A9A9</color>
+
+    <color name="mediumSeaGreen">#3CB371</color>
+
+    <color name="seaGreen">#2E8B57</color>
+
+    <color name="mediumspringgreen">#00FA9A</color>
+
+    <color name="crimson">#DC143C</color>
+
+    <color name="red">#FF0000</color>
+
+    <color name="fireBrick">#EE2C2C</color>
+
+    <color name="darkOrange">#FF8C00</color>
+
+    <color name="orange">#FFA500</color>
+
+    <color name="gray">#494E55</color>
+
+    <color name="nPText2">#bf0a30</color>
+
+    <color name="orangeExpired">#F1C40F</color>
+
+    <color name="statsBackground">#1C66D0</color>
+
+    <color name="gold">#FFD700</color>
+
+    <color name="orangeRed">#FF4500</color>
+
+    <color name="timeLinePostive">#2ECC71</color>
+    <color name="timeLineNegative">#E74C3C</color>
+
+    <color name="positiveAppBg">#2ECC71</color>
+    <color name="negativeAppBg">#D80000 </color>
+
+    <color name="darkOrchid">#9932CC</color>
+
+    <color name="blueExtra">#00688B</color>
+
+    <color name="blueViolet">#8A2BE2</color>
+
+    <color name="lightBackgroundText">#b8bee0</color>
+
+    <color name="timelineColor1">#00FFFF</color>
+    <color name="timelineColor2">#D94BB3</color>
+
+    <integer-array name="color_list">
+        <item>@color/colorSeekbar1</item>
+        <item>@color/colorSeekBar2</item>
+        <item>@color/colorSeekBar3</item>
+        <item>@color/colorSeekBar4</item>
+        <item>@color/colorSeekBar5</item>
+
+
+    </integer-array>
+
+    <color name="colorSeekbar1">#F6FBFC</color>
+    <color name="colorSeekBar2">#E4F2F6</color>
+    <color name="colorSeekBar3">#D4EAF2</color>
+    <color name="colorSeekBar4">#C0E1EC</color>
+    <color name="colorSeekBar5">#B7DDE9</color>
+
+    <integer-array name="color_list_main_activity">
+        <item>@color/mainSeekbar1</item>
+        <item>@color/mainSeekbar2</item>
+        <item>@color/mainSeekbar3</item>
+        <item>@color/mainSeekbar4</item>
+        <item>@color/mainSeekbar5</item>
+
+
+    </integer-array>
+
+    <color name="mainSeekbar1">#3DD0EF</color>
+    <color name="mainSeekbar2">#41D1F4</color>
+    <color name="mainSeekbar3">#A46A91</color>
+    <color name="mainSeekbar4">#F1234A</color>
+    <color name="mainSeekbar5">#EE2348</color>
+
+    <color name="warningColor">#DC143C</color>
+
+
+
+</resources>

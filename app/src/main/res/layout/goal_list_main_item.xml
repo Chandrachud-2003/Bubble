@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/main_goal_bg"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/goalTypeMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usage Goal"
+        android:background="@drawable/positive_main_goal_bg"
+        android:textColor="@color/pPText"
+        android:fontFamily="@font/montserrat"
+        android:textSize="10sp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/main_goal_bg"
+        android:layout_gravity="center_horizontal"
+
+        >
+
+        <com.mikhaellopez.circularprogressbar.CircularProgressBar
+            android:id="@+id/percentageGoalMain"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:cpb_background_progressbar_color="@color/transparent"
+            app:cpb_background_progressbar_width="0dp"
+            app:cpb_progress_direction="to_right"
+            app:cpb_progressbar_color="#3f51b5"
+            app:cpb_progressbar_width="5dp"
+            app:cpb_round_border="true" />
+
+    <ImageView
+        android:id="@+id/goalAppIconMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:src="@drawable/icons8_mario_goal"
+        android:layout_alignBottom="@id/percentageGoalMain"
+        android:layout_alignTop="@id/percentageGoalMain"
+        android:layout_alignEnd="@id/percentageGoalMain"
+        android:layout_alignStart="@id/percentageGoalMain"
+        android:layout_margin="15dp"
+
+        />
+
+
+
+
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/appNameGoalMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:fontFamily="@font/montserrat"
+        android:text="Super Mario"
+        android:textSize="14sp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        >
+
+        <TextView
+            android:id="@+id/goalCompletedTimeMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textSize="23sp"
+            android:textColor="@color/pPText"
+            android:text="1hr"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/goalTotalTimeMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkGray"
+            android:text="/ 2.4hr"
+            android:layout_marginLeft="3dp"
+            android:textSize="14sp"
+            />
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/limitGoalMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:fontFamily="@font/montserrat"
+        android:text="All day"
+        android:textSize="12sp"
+        android:layout_gravity="center_horizontal"
+        />
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainBackground"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+        <com.gelitenight.waveview.library.WaveView
+            android:id="@+id/wave"
+            android:layout_width="290dp"
+            android:layout_height="290dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topMainLayout"
+            />
+
+        <com.gelitenight.waveview.library.WaveView
+            android:id="@+id/wave2"
+            android:layout_width="290dp"
+            android:layout_height="290dp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:background="@color/transparent"
+            android:rotationX="180"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topMainLayout"
+
+            />
+
+
+        <RelativeLayout
+            android:id="@+id/cubicLayout"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal"
+
+
+            app:layout_constraintTop_toBottomOf="@+id/wave">
+
+            <LinearLayout
+                android:id="@+id/cubicNLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/cubic_graph_bg"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="- 15%"
+                    android:textColor="@color/nPText"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="VS YESTERDAY"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+
+                    />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/nCubicChart"
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/cubic_graph_bg"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="- 15%"
+                    android:textColor="@color/pPText"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="VS YESTERDAY"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+
+                    />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/pCubicChart"
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/topMainLayout"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/cubicLineGraphBack"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+
+                >
+
+                <ImageButton
+                    android:id="@+id/menuButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:padding="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/icons8_menu"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:text="BUBBLE"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_centerInParent="true"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/dateLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+
+                >
+
+                <RelativeLayout
+                    android:id="@+id/todayLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ToggleButton
+                        android:id="@+id/todayButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:fontFamily="@font/montserrat"
+                        android:padding="20dp"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textOff="Today"
+                        android:textOn="Today"
+                        android:textSize="18sp"
+
+
+                        android:textStyle="bold" />
+
+                    <View
+                        android:id="@+id/todayDivider"
+                        android:layout_width="100dp"
+                        android:layout_height="3.5dp"
+                        android:background="@color/white"
+                        android:layout_alignBottom="@+id/todayButton"
+                        android:layout_centerHorizontal="true"
+
+                        />
+
+
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/yesterdayLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/todayLayout"
+                    >
+
+                    <ToggleButton
+                        android:id="@+id/yesterdayButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="center"
+                        android:padding="20dp"
+                        android:textAllCaps="false"
+                        android:textColor="@color/toggleOffColor"
+                        android:textOff="Yesterday"
+                        android:textOn="Yesterday"
+                        android:textSize="14sp"
+
+                        android:textStyle="bold" />
+
+                    <View
+                        android:id="@+id/yesterdayDivider"
+                        android:layout_width="100dp"
+                        android:layout_height="3.5dp"
+                        android:background="@color/transparent"
+                        android:layout_alignBottom="@+id/yesterdayButton"
+                        android:layout_centerHorizontal="true"
+
+                        />
+
+
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/lastWeekLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/yesterdayLayout"
+                    >
+
+                    <ToggleButton
+                        android:id="@+id/lastWeekButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="center"
+                        android:padding="20dp"
+                        android:textAllCaps="false"
+                        android:textColor="@color/toggleOffColor"
+                        android:textOff="Last Week"
+                        android:textOn="Last Week"
+                        android:textSize="14sp"
+
+                        android:textStyle="bold" />
+
+                    <View
+                        android:id="@+id/lastWeekDivider"
+                        android:layout_width="100dp"
+                        android:layout_height="3.5dp"
+                        android:background="@color/transparent"
+                        android:layout_alignBottom="@+id/lastWeekButton"
+                        android:layout_centerHorizontal="true"
+
+                        />
+
+
+
+
+                </RelativeLayout>
+
+
+
+
+
+
+
+
+                <ImageButton
+                    android:id="@+id/moreRecentButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:background="@color/transparent"
+                    android:src="@drawable/icons8_more"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_centerVertical="true"
+                    android:rotation="90"
+                    android:layout_alignParentRight="true" />
+
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/bottomSheetScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_sheet_main_bg"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="230dp"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="5dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/divider4"
+                    android:layout_width="100dp"
+                    android:layout_height="3.5dp"
+                    android:background="@drawable/horizontal_line"
+                    android:layout_marginTop="3dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    />
+
+                <ImageButton
+                    android:id="@+id/expandBottomButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:src="@drawable/icons8_up_arrow"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="3dp"
+                    android:padding="10dp"
+
+                    />
+
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/montserrat"
+                    android:textStyle="bold"
+                    android:text="Today's Goals"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="See More"
+                    android:textColor="@color/blueExtra"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:padding="7dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="20dp"
+                    />
+            </RelativeLayout>
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/goalMainRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="horizontal"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                />
+
+
+
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="23sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="App Usage"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat"
+                />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/distributionChart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                />
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                >
+
+                <LinearLayout
+                    android:id="@+id/totalRadarHeading"
+                    android:layout_marginLeft="7dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentStart="true"
+                    android:background="@drawable/radar_stats_heading_bg"
+                    android:layout_alignParentLeft="true"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total"
+                        android:paddingHorizontal="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/montserrat"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:text="Energy"
+                        android:gravity="center_horizontal"
+
+                        android:fontFamily="@font/montserrat"
+                        android:layout_gravity="center_horizontal"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="12.5 hrs"
+                        android:gravity="center_horizontal"
+
+                        android:layout_marginTop="10dp"
+
+                        android:layout_gravity="center_horizontal"
+
+                        />
+
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/positiveRadarHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_toRightOf="@id/totalRadarHeading"
+                    android:background="@drawable/radar_stats_heading_bg"
+                    android:layout_marginLeft="15dp"
+                    >
+
+                    <com.gelitenight.waveview.library.WaveView
+                        android:id="@+id/positiveEnergyWave"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        />
+
+
+                        <LinearLayout
+                            android:id="@+id/positiveLinearHeading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="20dp"
+                            android:paddingVertical="10dp"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Positive"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:fontFamily="@font/montserrat"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center_horizontal"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                android:text="Energy"
+                                android:gravity="center_horizontal"
+                                android:fontFamily="@font/montserrat"
+                                android:layout_gravity="center_horizontal"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:text="6.5 hrs"
+                                android:gravity="center_horizontal"
+
+                                android:layout_marginTop="10dp"
+
+                                android:layout_gravity="center_horizontal"
+
+                                />
+
+
+                        </LinearLayout>
+
+
+
+
+
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/radar_stats_heading_bg"
+
+                    android:layout_toRightOf="@+id/positiveRadarHeading"
+                    android:layout_toEndOf="@+id/positiveRadarHeading"
+                    android:layout_marginStart="15dp">
+
+                    <com.gelitenight.waveview.library.WaveView
+                        android:id="@+id/negativeEnergyWave"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/negativeLinearHeading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="10dp"
+
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Negative"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/montserrat"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:text="Energy"
+                            android:gravity="center_horizontal"
+
+                            android:fontFamily="@font/montserrat"
+                            android:layout_gravity="center_horizontal"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:text="5.5 hrs"
+                            android:gravity="center_horizontal"
+
+                            android:layout_marginTop="10dp"
+
+                            android:layout_gravity="center_horizontal"
+
+                            />
+
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textColor="@color/white"
+                android:text="Distribution"
+                android:fontFamily="@font/montserrat"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="20dp"
+
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/appDistributionRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="@color/transparent"
+                android:scrollbars="horizontal"
+                />
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
