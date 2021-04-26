@@ -1,41 +1,32 @@
-package com.randc.productivityapp;
+package com.randc.productivityapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.animation.Animator;
 import android.app.AppOpsManager;
-import android.app.Dialog;
-import android.app.usage.UsageStatsManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Shader;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.Process;
 import android.provider.Settings;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import com.airbnb.lottie.LottieAnimationView;
 import com.gelitenight.waveview.library.WaveView;
 import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.charts.Chart;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
@@ -49,23 +40,17 @@ import com.github.mikephil.charting.formatter.IFillFormatter;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.dataprovider.LineDataProvider;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
-import com.github.mikephil.charting.model.GradientColor;
-import com.github.mikephil.charting.utils.ColorTemplate;
-import com.github.stefanodp91.android.circularseekbar.CircularSeekBar;
-import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 import com.randc.productivityapp.Adapters.appUsageAdapter;
 import com.randc.productivityapp.Adapters.goalMainAdapter;
-import com.randc.productivityapp.HelperClasses.CustomXAxisRenderer;
-import com.randc.productivityapp.HelperClasses.Fill;
+import com.randc.productivityapp.Constants;
 import com.randc.productivityapp.HelperClasses.RoundedBarChartRenderer;
 import com.randc.productivityapp.HelperClasses.SideNavClass;
 import com.randc.productivityapp.HelperClasses.WaveHelper;
 import com.randc.productivityapp.Items.appUsageItem;
 import com.randc.productivityapp.Items.goalMainItem;
+import com.randc.productivityapp.R;
 import com.randc.productivityapp.Services.DetectAppService;
 import com.thekhaeng.pushdownanim.PushDownAnim;
-import com.yarolegovich.slidingrootnav.SlidingRootNav;
-import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,10 +63,7 @@ public class MainActivity extends AppCompatActivity {
     private WaveHelper positiveHelper;
     private WaveHelper negativeHelper;
 
-
-
     private RecyclerView distributionRecycler;
-
 
     private WaveView pWave;
     private WaveView nWave;
@@ -131,12 +113,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayoutManager goalMainLayout;
 
     private int statsRequestCode = 23123;
-
-
     private int start=0;
-
-
-
 
     private float pProgress;
     private float nProgress;
@@ -157,8 +134,8 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        mSideNavClass = new SideNavClass(MainActivity.this, savedInstanceState, Constants.mainActivity);
-        mSideNavClass.setUpSideNav();
+        //mSideNavClass = new SideNavClass(MainActivity.this, savedInstanceState, Constants.mainActivity);
+        //mSideNavClass.setUpSideNav();
 
         pLineChart.setViewPortOffsets(0, 0, 0, 0);
         pLineChart.setBackgroundColor(Color.TRANSPARENT);
@@ -277,8 +254,8 @@ public class MainActivity extends AppCompatActivity {
 
         pProgress = 0.5f;
         nProgress = 0.25f;
-        pWaveHelper = new WaveHelper(pWave, pProgress);
-        nWaveHelper = new WaveHelper(nWave, nProgress);
+        pWaveHelper = new WaveHelper(pWave, pProgress, 3000, 5000);
+        nWaveHelper = new WaveHelper(nWave, nProgress, 3000, 5000);
 
 
         pWaveHelper.start();
@@ -794,7 +771,7 @@ public class MainActivity extends AppCompatActivity {
                 positiveWave.setBorder(0, Color.parseColor("#00FFFFFF"));
                 positiveWave.setWaveColor(Color.parseColor("#26978C"), Color.parseColor("#21e8c7"));
 
-                positiveHelper = new WaveHelper(positiveWave, 0.5f);
+                positiveHelper = new WaveHelper(positiveWave, 0.5f, 3000, 5000);
 
                 positiveHelper.start();
             }
@@ -811,7 +788,7 @@ public class MainActivity extends AppCompatActivity {
                 negativeWave.setWaveColor(Color.parseColor("#953F53"), Color.parseColor("#f03145"));
 
 
-                negativeHelper = new WaveHelper(negativeWave, 0.4f);
+                negativeHelper = new WaveHelper(negativeWave, 0.4f, 3000, 5000);
 
                 negativeHelper.start();
             }

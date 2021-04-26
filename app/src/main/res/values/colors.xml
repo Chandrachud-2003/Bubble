@@ -120,6 +120,10 @@
 
     <color name="warningColor">#DC143C</color>
 
+    <color name="home_date_notclicked">#586389</color>
+
+    <color name="goalCenterCountText">#3469FD</color>
+
 
 
 </resources>

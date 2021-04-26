@@ -1,23 +1,21 @@
-package com.randc.productivityapp;
+package com.randc.productivityapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
 import com.av.smoothviewpager.Smoolider.SmoothViewpager;
-import com.randc.productivityapp.Adapters.SmooliderAdapter;
-import com.randc.productivityapp.Adapters.timelineAdapter;
+import com.randc.productivityapp.Adapters.smooliderAdapter;
+import com.randc.productivityapp.Constants;
 import com.randc.productivityapp.HelperClasses.SideNavClass;
 import com.randc.productivityapp.Items.timelineItem;
+import com.randc.productivityapp.R;
 
 import java.util.ArrayList;
 
@@ -56,7 +54,7 @@ public class timelineActivity extends AppCompatActivity {
 
         changeHeaderInfo(0);
 
-        smooliderViewPager.setAdapter(new SmooliderAdapter(smooliderList, getApplicationContext()));
+        smooliderViewPager.setAdapter(new smooliderAdapter(smooliderList, getApplicationContext()));
 
 
         smooliderViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {

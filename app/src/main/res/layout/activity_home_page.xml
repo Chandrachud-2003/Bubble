@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<jp.co.recruit_lifestyle.android.widget.WaveSwipeRefreshLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_swipe"
+    tools:context=".activities.HomePage"
+    android:background="@color/mainBackground"
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    >
+
+<com.factor.bouncy.BouncyNestedScrollView
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:fling_animation_size=".7"
+    app:overscroll_animation_size=".7"
+    android:fitsSystemWindows="true"
+    >
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/bubbleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:text="BUBBLE"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="@font/montserrat"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+
+            />
+
+        <ImageButton
+            android:id="@+id/menuButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@color/transparent"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/icons8_menu"
+            />
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="fitCenter"
+            android:id="@+id/statisticsButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/transparent"
+            android:src="@drawable/statistics_icon"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/dateRecycler"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/bubbleText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/yourBubbleHeadingLayout"
+            app:layout_constraintTop_toBottomOf="@id/dateRecycler"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="20dp"
+            >
+            <TextView
+                android:id="@+id/yourText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/darkGray"
+                android:textSize="21sp"
+                android:text="Hello, "
+                android:textStyle="normal"
+                />
+            <TextView
+                android:id="@+id/mainNameView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="21sp"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="Chandrachud 👋"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/yourText"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:id="@+id/yourBubbleMainConstraintLayout"
+                android:background="@drawable/home_your_bubble_bg"
+                app:layout_constraintTop_toBottomOf="@id/yourBubbleHeadingLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_height="wrap_content">
+
+
+                <com.gelitenight.waveview.library.WaveView
+                    android:id="@+id/positiveBubble"
+                    android:layout_width="250dp"
+                    android:focusable="false"
+                    android:layout_height="250dp"
+                    android:clickable="false"
+                    android:layout_margin="10dp"
+                    android:layout_centerHorizontal="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <com.gelitenight.waveview.library.WaveView
+                    android:id="@+id/negativeBubble"
+                    android:layout_width="250dp"
+                    android:layout_margin="10dp"
+                    android:layout_height="250dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/transparent"
+                    android:rotationX="180"
+                    android:clickable="false"
+                    android:focusable="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/positiveBubblePreviewLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/positiveBubble"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/your_bubble_summary_bg"
+                    >
+
+
+                    <com.gelitenight.waveview.library.WaveView
+                        android:id="@+id/positiveBubblePreviewBubble"
+                        android:layout_width="0dp"
+                        android:background="@drawable/your_bubble_positiveicon_bg"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_height="0dp"/>
+
+                    <ImageView
+                        android:id="@+id/positiveBubblePreviewImage"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="fitCenter"
+                        android:layout_margin="7dp"
+
+                        android:background="@drawable/your_bubble_summary_bg"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:padding="7dp"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/positiveBubblePreviewName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_marginEnd="5dp"
+                        android:maxLines="1"
+                        app:layout_constraintEnd_toStartOf="@id/positiveBubblePreviewRanking"
+                        app:layout_constraintStart_toEndOf="@id/positiveBubblePreviewImage"
+                        app:layout_constraintTop_toTopOf="@id/positiveBubblePreviewImage"
+                        android:layout_marginStart="15dp"
+                        android:fontFamily="@font/montserrat"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/positiveBubblePreviewTime"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/montserrat"
+                        android:textSize="15sp"
+                        android:layout_marginStart="15dp"
+                        app:layout_constraintTop_toBottomOf="@id/positiveBubblePreviewName"
+                        app:layout_constraintBottom_toBottomOf="@id/positiveBubblePreviewImage"
+                        app:layout_constraintStart_toEndOf="@id/positiveBubblePreviewImage"
+                        />
+
+                    <TextView
+                        android:id="@+id/positiveBubblePreviewRanking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginEnd="20dp"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="@color/pPText"
+                        android:textStyle="bold"
+                        android:textSize="30sp"
+                        />
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/negativeBubblePreviewLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/positiveBubblePreviewLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_margin="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/your_bubble_negativeicon_bg"
+                    >
+
+                    <com.gelitenight.waveview.library.WaveView
+                        android:id="@+id/negativeBubblePreviewBubble"
+                        android:layout_width="0dp"
+                        android:rotation="0"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_height="0dp"/>
+
+                    <ImageView
+                        android:id="@+id/negativeBubblePreviewImage"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="fitCenter"
+                        android:layout_margin="7dp"
+
+                        android:background="@drawable/your_bubble_summary_bg"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:padding="7dp"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/negativeBubblePreviewName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_marginEnd="15dp"
+                        android:maxLines="1"
+                        android:layout_marginStart="5dp"
+                        android:textAlignment="textEnd"
+                        app:layout_constraintEnd_toStartOf="@id/negativeBubblePreviewImage"
+                        app:layout_constraintTop_toTopOf="@id/negativeBubblePreviewImage"
+                        android:fontFamily="@font/montserrat"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/negativeBubblePreviewTime"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/montserrat"
+                        android:textSize="15sp"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintTop_toBottomOf="@id/negativeBubblePreviewName"
+                        app:layout_constraintBottom_toBottomOf="@id/negativeBubblePreviewImage"
+                        app:layout_constraintEnd_toStartOf="@id/negativeBubblePreviewImage"
+                        />
+
+                    <TextView
+                        android:id="@+id/negativeBubblePreviewRanking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="@color/nPText"
+                        android:textStyle="bold"
+                        android:textSize="30sp"
+                        />
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/cubicLayout"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="15dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/yourBubbleMainConstraintLayout">
+
+            <LinearLayout
+                android:id="@+id/cubicNLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cubic_graph_bg"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/cubicNPercent"
+                    android:fontFamily="@font/montserrat"
+                    android:text="- 15%"
+                    android:textColor="@color/nPText"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="3dp"
+                    android:id="@+id/cubicNRef"
+                    android:fontFamily="@font/montserrat"
+                    android:text="vs yesterday"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+
+                    />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/nCubicChart"
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/cubic_graph_bg"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="- 15%"
+                    android:id="@+id/cubicPPercent"
+                    android:textColor="@color/pPText"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="vs yesterday"
+                    android:id="@+id/cubicPRef"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+
+                    />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/pCubicChart"
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/goalCenterHeadingLayout"
+            app:layout_constraintTop_toBottomOf="@id/cubicLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            >
+            <TextView
+                android:id="@+id/goalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/white"
+                android:textSize="21sp"
+                android:text="Goal "
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="21sp"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="normal"
+                android:textColor="@color/darkGray"
+                android:text="Center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/goalText"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/goalCenterPreviewLayout"
+            app:layout_constraintTop_toBottomOf="@id/goalCenterHeadingLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginHorizontal="15dp"
+            android:background="@drawable/home_your_bubble_bg"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/leftGoalCenterPreviewLayout"
+                >
+
+
+            <TextView
+                android:id="@+id/dailygoalsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/darkGray"
+                android:text="Daily Goals"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/goalcenter_preview_count_bg"
+                android:textColor="@color/goalCenterCountText"
+                android:id="@+id/goalcenterCountText"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="3dp"
+                app:layout_constraintTop_toBottomOf="@id/dailygoalsText"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="7dp"
+                android:layout_marginStart="15dp"
+                android:text="7/10"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/goalcenterCountText"
+                app:layout_constraintTop_toTopOf="@id/goalcenterCountText"
+                app:layout_constraintBottom_toBottomOf="@id/goalcenterCountText"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat"
+                android:layout_marginStart="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:text="goals"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/goalCenterCountText"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat"
+                app:layout_constraintTop_toBottomOf="@id/goalcenterCountText"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/goodjobText"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="Good Job!"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkGray"
+                android:textSize="15sp"
+                android:fontFamily="@font/montserrat"
+                app:layout_constraintTop_toBottomOf="@id/goodjobText"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/goalcenterCountDescription"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="1dp"
+                android:text="You finished 7/10 goals\ntoday! 🎉"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/allGoalsButton"
+                android:textSize="17sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/goalcenterCountDescription"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="20dp"
+                android:textStyle="bold"
+                android:text="All Goals"
+                android:background="@drawable/all_goals_button_bg"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="5dp"
+                />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/leftGoalCenterPreviewLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/your_bubble_positiveicon_bg"
+                android:layout_marginStart="15dp"
+                android:id="@+id/rightGoalCenterLayout"
+                >
+
+                <com.shunan.circularprogressbar.CircularProgressBar
+                    android:id="@+id/goalPreviewSeekBar"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    app:dotWidth="1dp"
+
+                    app:enableBackgroundDashEffect="true"
+
+                    app:showDot="false"
+                    app:progressWidth="2dp"
+                    app:progressBackgroundWidth="1dp"
+                    app:progressColor="@color/goalCenterCountText"
+                    app:progressBackgroundColor="@color/mainBackground"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="20dp"
+
+                    />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/goalPreviewIcon"
+                    app:layout_constraintTop_toTopOf="@id/goalPreviewSeekBar"
+                    app:layout_constraintStart_toStartOf="@id/goalPreviewSeekBar"
+                    app:layout_constraintEnd_toEndOf="@id/goalPreviewSeekBar"
+                    app:layout_constraintBottom_toBottomOf="@id/goalPreviewSeekBar"
+                    android:layout_margin="30dp"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/goalPreviewSeekBar"
+                    android:id="@+id/goalPreviewName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginHorizontal="20dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/montserrat"
+                    android:textSize="17sp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/goalPreviewDescriptionLayout"
+                    app:layout_constraintTop_toBottomOf="@id/goalPreviewName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="20dp"
+                    >
+
+                    <com.randc.productivityapp.VerticalTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/goalPreviewType"
+                        android:text="Usage Limit"
+                        android:fontFamily="@font/montserrat"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="2dp"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="10dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/pPText"
+                        android:gravity="bottom|end"
+                        android:background="@drawable/goal_center_type_bg"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/goalPreviewTime"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/goalPreviewType"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="7dp"
+                        android:textStyle="bold"
+                        android:textSize="21sp"
+                        android:text="2hr 07min"
+                        android:textColor="@color/pPText"
+                        android:fontFamily="@font/montserrat"
+                        />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/goalPreviewType"
+                        android:layout_marginStart="15dp"
+                        android:id="@+id/goalPreviewPercentLayout"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/goalPreviewTime"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:id="@+id/goalPreviewPercent"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:text="75%"
+                            android:textColor="@color/pPText"
+                            android:fontFamily="@font/montserrat"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/goalPreviewPercentText"
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/montserrat"
+                            android:text="complete"
+                            android:textColor="@color/white"
+                            app:layout_constraintTop_toTopOf="@id/goalPreviewPercent"
+                            app:layout_constraintBottom_toBottomOf="@id/goalPreviewPercent"
+                            app:layout_constraintStart_toEndOf="@id/goalPreviewPercent"
+                            android:layout_marginStart="5dp"
+                            />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/timerShortcutHeading"
+            app:layout_constraintTop_toBottomOf="@id/goalCenterPreviewLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="Handpicked "
+                android:id="@+id/handpickedHeading"
+                android:textSize="21sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/handpickedHeading"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/darkGray"
+                android:textSize="21sp"
+                android:id="@+id/tasksHeading"
+                android:fontFamily="@font/montserrat"
+                android:text="Tasks for "
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/tasksHeading"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/youText"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat"
+                android:textSize="21sp"
+                android:text="You"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginHorizontal="15dp"
+            android:id="@+id/timerShortcutLayout"
+            app:layout_constraintTop_toBottomOf="@id/timerShortcutHeading"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="wrap_content">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:orientation="horizontal"
+                android:id="@+id/customTaskViewpager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+
+
+            </androidx.viewpager2.widget.ViewPager2>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/customTaskViewpagerTabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_gravity="bottom|start"
+                app:tabBackground="@drawable/custom_task_tab_selector"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="0dp"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.factor.bouncy.BouncyNestedScrollView>
+    ></jp.co.recruit_lifestyle.android.widget.WaveSwipeRefreshLayout>

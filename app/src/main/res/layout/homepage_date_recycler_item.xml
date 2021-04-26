@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:paddingHorizontal="25dp"
+    android:background="@drawable/home_date_bg"
+    >
+
+    <TextView
+        android:id="@+id/dateNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="07"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserrat"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/home_date_notclicked"
+        />
+
+    <TextView
+        android:id="@+id/dayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mon"
+        android:fontFamily="@font/montserrat"
+        android:textSize="12sp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/home_date_notclicked"
+        />
+    <View
+        android:id="@+id/selectedIndicator"
+        android:visibility="gone"
+        android:layout_width="10dp"
+        android:layout_height="4dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@drawable/home_date_bottom_white"
+        />
+
+</LinearLayout>

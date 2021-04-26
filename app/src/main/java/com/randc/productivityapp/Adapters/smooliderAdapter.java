@@ -22,13 +22,13 @@ import java.util.List;
 import static com.av.smoothviewpager.utils.Smoolider_Utils.decodeSampledBitmapFromResource;
 import static com.av.smoothviewpager.utils.Smoolider_Utils.openWebPage;
 
-public class SmooliderAdapter extends PagerAdapter {
+public class smooliderAdapter extends PagerAdapter {
 
 
     private Context mContext;
     private ArrayList<ArrayList<timelineItem>> itemList;
 
-    public SmooliderAdapter(ArrayList<ArrayList<timelineItem>> itemList, Context mContext) {
+    public smooliderAdapter(ArrayList<ArrayList<timelineItem>> itemList, Context mContext) {
             this.mContext = mContext;
             this.itemList = itemList;
         }

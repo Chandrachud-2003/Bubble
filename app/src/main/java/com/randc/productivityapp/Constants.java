@@ -1,5 +1,7 @@
 package com.randc.productivityapp;
 
+import com.randc.productivityapp.Items.customTaskItem;
+
 public class Constants {
 
     public static final String positiveAppKey = "Positive Apps";
@@ -20,13 +22,23 @@ public class Constants {
 
     public static final String showWarningIntent = "Show bubble warning";
 
-    public static final String mainActivity = "MainActivity";
+    public static final String homePageActivity = "HomePage";
     public static final String timerActivity = "TimerActivity";
     public static final String timelineActivity = "TimelineActivity";
     public static final String aboutActivity = "AboutActivity";
     public static final String yourAppsActivity = "YourAppsActivity";
     public static final String goalsActivity = "GoalsActivity";
     public static final String settingsActivity = "SettingsActivity";
+
+    public static final customTaskItem[] customTasks = {
+            new customTaskItem(R.drawable.blogging_vector, "Blogging Session - ", 0),
+            new customTaskItem(R.drawable.gardening_vector, "Gardening Session - ", 0),
+            new customTaskItem(R.drawable.journaling_vector, "Journaling Session - ", 0),
+            new customTaskItem(R.drawable.meditation_vector, "Meditation Session - ", 0),
+            new customTaskItem(R.drawable.studying_vector, "Study Session - ", 0),
+            new customTaskItem(R.drawable.workout_vector, "Workout Session - ", 0),
+
+    };
 
 
 

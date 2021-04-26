@@ -1,4 +1,4 @@
-package com.randc.productivityapp;
+package com.randc.productivityapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,10 +13,12 @@ import android.widget.TextView;
 import com.randc.productivityapp.Adapters.expiredGoalAdapter;
 import com.randc.productivityapp.Adapters.goalDateAdapter;
 import com.randc.productivityapp.Adapters.ongoingGoalAdapter;
+import com.randc.productivityapp.Constants;
 import com.randc.productivityapp.HelperClasses.SideNavClass;
 import com.randc.productivityapp.Items.expiredGoalItem;
 import com.randc.productivityapp.Items.goalDateItem;
 import com.randc.productivityapp.Items.ongoingGoalItem;
+import com.randc.productivityapp.R;
 
 import java.util.ArrayList;
 import java.util.List;

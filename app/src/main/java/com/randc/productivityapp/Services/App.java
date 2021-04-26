@@ -3,10 +3,7 @@ package com.randc.productivityapp.Services;
 import android.app.Application;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.content.Intent;
 import android.os.Build;
-
-import com.randc.productivityapp.MainActivity;
 
 public class App extends Application {
 

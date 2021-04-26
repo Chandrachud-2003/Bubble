@@ -7,7 +7,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".YourAppsActivity"
+    tools:context=".activities.YourAppsActivity"
     android:background="@color/mainBackground"
     >
 
@@ -63,13 +63,13 @@
         android:layout_height="0dp"
         android:paddingBottom="10dp"
         android:background="@drawable/your_app_bg"
-        tools:context=".YourAppsActivity">
+        tools:context=".activities.YourAppsActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/yourAppsMiniConstraintLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".YourAppsActivity">
+            tools:context=".activities.YourAppsActivity">
 
             <ImageButton
                 android:id="@+id/premiumButton"

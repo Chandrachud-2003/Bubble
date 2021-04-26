@@ -3,7 +3,6 @@ package com.randc.productivityapp.HelperClasses;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -11,20 +10,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.daimajia.easing.linear.Linear;
 import com.randc.productivityapp.Constants;
-import com.randc.productivityapp.GoalsActivity;
-import com.randc.productivityapp.MainActivity;
+import com.randc.productivityapp.activities.GoalCenter;
+import com.randc.productivityapp.activities.GoalsActivity;
+import com.randc.productivityapp.activities.HomePage;
+import com.randc.productivityapp.activities.MainActivity;
 import com.randc.productivityapp.R;
-import com.randc.productivityapp.TimerActivity;
-import com.randc.productivityapp.YourAppsActivity;
-import com.randc.productivityapp.timelineActivity;
+import com.randc.productivityapp.activities.TimerActivity;
+import com.randc.productivityapp.activities.YourAppsActivity;
+import com.randc.productivityapp.activities.timelineActivity;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
-
-import org.w3c.dom.Text;
-
-import java.util.List;
 
 public class SideNavClass {
 
@@ -119,7 +115,7 @@ public class SideNavClass {
 
     private void setUpButtonAppearences()
     {
-        if(activityName.equals(Constants.mainActivity))
+        if(activityName.equals(Constants.homePageActivity))
         {
             homeText.setTextColor(Color.WHITE);
             homeImage.setImageResource(R.drawable.home_menu_white);
@@ -304,14 +300,14 @@ public class SideNavClass {
             @Override
             public void onClick(View view) {
 
-                if (activityName.equals(Constants.mainActivity))
+                if (activityName.equals(Constants.homePageActivity))
                 {
                     slidingRootNav.closeMenu();
                 }
 
                 else {
                     slidingRootNav.closeMenu();
-                    Intent intent = new Intent(activity, MainActivity.class);
+                    Intent intent = new Intent(activity, HomePage.class);
                     activity.startActivity(intent);
                 }
 
@@ -365,7 +361,7 @@ public class SideNavClass {
 
                 else {
                     slidingRootNav.closeMenu();
-                    Intent intent = new Intent(activity, GoalsActivity.class);
+                    Intent intent = new Intent(activity, GoalCenter.class);
                     activity.startActivity(intent);
                 }
 

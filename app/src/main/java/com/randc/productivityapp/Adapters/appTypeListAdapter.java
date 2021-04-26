@@ -7,29 +7,21 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.gelitenight.waveview.library.WaveView;
-import com.randc.productivityapp.AppInfoActivity;
+import com.randc.productivityapp.activities.AppInfoActivity;
 import com.randc.productivityapp.Constants;
-import com.randc.productivityapp.HelperClasses.WaveHelper;
 import com.randc.productivityapp.Items.appTypeListItem;
-import com.randc.productivityapp.Items.appUsageItem;
 import com.randc.productivityapp.R;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
 import java.util.List;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class appTypeListAdapter extends RecyclerView.Adapter<appTypeListAdapter.MyView> {
 

@@ -1,11 +1,9 @@
-package com.randc.productivityapp;
+package com.randc.productivityapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.animation.Animator;
 import android.annotation.SuppressLint;
 import android.app.AppOpsManager;
-import android.app.Dialog;
 import android.app.usage.UsageStats;
 import android.app.usage.UsageStatsManager;
 import android.content.Context;
@@ -23,25 +21,22 @@ import android.os.Process;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.airbnb.lottie.LottieAnimationView;
 import com.gelitenight.waveview.library.WaveView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.randc.productivityapp.Constants;
 import com.randc.productivityapp.HelperClasses.WaveHelper;
 import com.randc.productivityapp.Items.AppSharedPreferencesItem;
+import com.randc.productivityapp.R;
 
 import java.lang.reflect.Type;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -130,7 +125,7 @@ public class AppInfoActivity extends AppCompatActivity {
         appUsageWave.setBorder(0, Color.parseColor("#00FFFFFF"));
         appUsageWave.setWaveColor(Color.parseColor("#26978C"), Color.parseColor("#21e8c7"));
 
-        WaveHelper usageWaveHelper = new WaveHelper(appUsageWave, 0.35f);
+        WaveHelper usageWaveHelper = new WaveHelper(appUsageWave, 0.35f, 3000, 5000);
 
         usageWaveHelper.start();
 
@@ -495,7 +490,7 @@ public class AppInfoActivity extends AppCompatActivity {
             waveValue = ((float)percentage)/100.0f;
         }
 
-        WaveHelper usageWaveHelper = new WaveHelper(appUsageWave, waveValue);
+        WaveHelper usageWaveHelper = new WaveHelper(appUsageWave, waveValue, 3000, 5000);
 
         usageWaveHelper.start();
 

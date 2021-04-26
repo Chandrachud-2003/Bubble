@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mainBackground"
-    tools:context=".GoalsActivity">
+    tools:context=".activities.GoalsActivity">
 
 
     <View
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@drawable/goal_main_bg"
-            tools:context=".GoalsActivity"
+            tools:context=".activities.GoalsActivity"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/divider"
             android:elevation="5dp"
@@ -63,7 +63,7 @@
                         android:id="@+id/textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="3dp"
+                        android:layout_marginStart="3dp"
                         android:fontFamily="@font/montserrat"
                         android:text="Center"
                         android:textColor="@color/darkGray"

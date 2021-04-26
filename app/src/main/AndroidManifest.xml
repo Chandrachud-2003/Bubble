@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.randc.productivityapp">
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+
     <application
         android:name=".Services.App"
         android:allowBackup="true"
@@ -11,20 +17,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-
+        <activity android:name=".activities.GoalCenter"></activity>
+        <activity android:name=".activities.HomePage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GoalsActivity" />
-        <activity android:name=".timelineActivity" />
-        <activity android:name=".AppInfoActivity" />
-        <activity android:name=".TimerActivity" />
+        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.GoalsActivity" />
+        <activity android:name=".activities.timelineActivity" />
+        <activity android:name=".activities.AppInfoActivity" />
+        <activity android:name=".activities.TimerActivity" />
         <activity
-            android:name=".YourAppsActivity"
+            android:name=".activities.YourAppsActivity"
             android:label="@string/title_activity_timer"
             android:theme="@style/AppTheme.NoActionBar" />
 
@@ -33,12 +40,6 @@
             android:resource="@array/preloaded_fonts" />
 
         <service android:name=".Services.DetectAppService" />
-    </application> <!-- required by Android 9 -->
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission
-        android:name="android.permission.PACKAGE_USAGE_STATS"
-        tools:ignore="ProtectedPermissions" />
-
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    </application>
 
 </manifest>

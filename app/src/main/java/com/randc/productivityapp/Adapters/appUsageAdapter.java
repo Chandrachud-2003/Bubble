@@ -125,7 +125,7 @@ public class appUsageAdapter
                         holder.changeText.setTextColor(Color.parseColor("#21e8c7"));
                     }
 
-                    WaveHelper waveHelper = new WaveHelper(holder.distributionWave, change);
+                    WaveHelper waveHelper = new WaveHelper(holder.distributionWave, change, 3000, 5000);
                     waveHelper.start();
 
                 }
@@ -138,7 +138,7 @@ public class appUsageAdapter
 
                     }
 
-                    WaveHelper waveHelper = new WaveHelper(holder.distributionWave, change);
+                    WaveHelper waveHelper = new WaveHelper(holder.distributionWave, change, 3000, 5000);
                     waveHelper.start();
 
                 }

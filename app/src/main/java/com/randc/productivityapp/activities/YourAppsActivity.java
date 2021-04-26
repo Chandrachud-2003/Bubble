@@ -1,13 +1,10 @@
-package com.randc.productivityapp;
+package com.randc.productivityapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AppOpsManager;
@@ -41,17 +38,19 @@ import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieDrawable;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.daimajia.androidanimations.library.sliders.SlideOutLeftAnimator;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.randc.productivityapp.Adapters.addAppAdapter;
 import com.randc.productivityapp.Adapters.appTypeListAdapter;
+import com.randc.productivityapp.AppInfo;
+import com.randc.productivityapp.AppInfoRetriever;
+import com.randc.productivityapp.Constants;
 import com.randc.productivityapp.HelperClasses.SideNavClass;
 import com.randc.productivityapp.Items.AppSharedPreferencesItem;
 import com.randc.productivityapp.Items.addAppItem;
 import com.randc.productivityapp.Items.appTypeListItem;
+import com.randc.productivityapp.R;
 import com.randc.productivityapp.Services.DetectAppService;
-import com.wang.avi.AVLoadingIndicatorView;
 
 
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent;
@@ -61,7 +60,6 @@ import java.lang.ref.WeakReference;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
