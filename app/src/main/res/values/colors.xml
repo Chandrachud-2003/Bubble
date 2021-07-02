@@ -7,6 +7,7 @@
     <color name="transparent">#00FFFFFF</color>
 
     <color name="mainBackground">#0A0F2D</color>
+    <color name="mainBackgroundLight">#1A1F3D</color>
 
     <color name="menuNotSelected">#707cc2</color>
 
@@ -16,7 +17,10 @@
 
     <color name="cubicLineGraphBack">#1A1F3D</color>
     <color name="nPText">#f03145</color>
+    <color name="light_nPText">#80f03145</color>
+    <color name="light_pPText">#8021e8c7</color>
     <color name="pPText">#21e8c7</color>
+    <color name="pPText2">#62EFF2</color>
 
     <color name="toggleColor">#21e8c7</color>
     
@@ -123,6 +127,12 @@
     <color name="home_date_notclicked">#586389</color>
 
     <color name="goalCenterCountText">#3469FD</color>
+    <color name="lightBlue">#803469FD</color>
+
+    <color name="goalCenterCircleBackground">#0A0F2D</color>
+    <color name="goalCenterCircleMain">#3169DD</color>
+    <color name="goalCenterCircleNegative">#FA7449</color>
+    <color name="goalCenterCirclePositive">#62F0F3</color>
 
 
 

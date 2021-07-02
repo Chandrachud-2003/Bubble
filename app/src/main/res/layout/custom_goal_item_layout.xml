@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginHorizontal="20dp"
+    android:paddingHorizontal="15dp"
+    android:paddingVertical="15dp"
+    android:layout_marginTop="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/custom_goal_item_bg"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/customGoalItemInnerLayout"
+        >
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/customGoalItemImage"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_marginStart="7dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/customGoalItemNameAndTypeLayout"
+        app:layout_constraintEnd_toStartOf="@+id/customGoalItemCompleted"
+        app:layout_constraintStart_toEndOf="@id/customGoalItemImage"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/customGoalItemName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textSize="12sp"
+            android:id="@+id/customGoalItemType"
+            android:textAllCaps="false"
+            android:layout_marginStart="7dp"
+            app:layout_constraintTop_toTopOf="@id/customGoalItemName"
+            app:layout_constraintBottom_toBottomOf="@id/customGoalItemName"
+            app:layout_constraintStart_toEndOf="@id/customGoalItemName"
+            android:textStyle="bold"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="1dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.robinhood.ticker.TickerView
+        android:id="@+id/customGoalItemCompleted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:ticker_defaultCharacterList="alphabet"
+        app:ticker_animationDuration="1000"
+        app:ticker_defaultPreferredScrollingDirection="any"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/customGoalItemTotal"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserrat"
+        android:id="@+id/customGoalItemTotal"
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="15dp"
+        app:trackCornerRadius="30dp"
+        app:trackThickness="5dp"
+        app:layout_constraintTop_toBottomOf="@id/customGoalItemInnerLayout"
+        android:id="@+id/customGoalItemBar"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

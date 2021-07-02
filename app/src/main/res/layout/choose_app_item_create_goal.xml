@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/selectedAppLayout"
+    android:background="@drawable/choose_app_bg"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/appChooseHeading"
+    android:layout_marginTop="5dp"
+    android:layout_marginStart="7dp"
+    android:visibility="visible"
+    android:paddingHorizontal="15dp"
+    android:paddingVertical="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/chooseAppImage"
+        android:scaleType="fitCenter"
+        android:src="@drawable/icons8_whatsapp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/chooseAppImage"
+        android:id="@+id/chooseAppText"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/white"
+        android:padding="1dp"
+        android:fontFamily="@font/montserrat"
+        android:textSize="15sp"
+        android:text="WhatsApp"
+        android:textStyle="normal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

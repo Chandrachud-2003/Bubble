@@ -28,7 +28,7 @@
         android:textStyle="bold"
         android:paddingHorizontal="12dp"
         android:paddingVertical="2dp"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
@@ -42,7 +42,7 @@
         android:background="@drawable/custom_task_text_bg"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         android:paddingHorizontal="12dp"
         android:paddingVertical="2dp"

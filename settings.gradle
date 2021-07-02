@@ -1,2 +1,3 @@
+include ':fluid-slider'
 rootProject.name='productivityApp'
 include ':app'

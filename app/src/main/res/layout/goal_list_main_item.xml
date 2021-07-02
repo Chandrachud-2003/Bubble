@@ -100,7 +100,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/darkGray"
             android:text="/ 2.4hr"
-            android:layout_marginLeft="3dp"
+            android:layout_marginStart="3dp"
             android:textSize="14sp"
             />
 

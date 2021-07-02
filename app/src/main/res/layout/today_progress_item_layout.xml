@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_marginStart="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/today_progress_incomplete_bg"
+    android:paddingStart="13dp"
+    android:paddingEnd="10dp"
+    android:paddingBottom="15dp"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pieConstraintLayout"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+    <com.deepan.pieprogress.PieProgress
+        android:id="@+id/todayProgressPiePositive"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:visibility="gone"
+        app:progressColor="@color/pPText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+    <com.deepan.pieprogress.PieProgress
+        android:id="@+id/todayProgressPieNegative"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:progressColor="@color/goalCenterCircleNegative"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <com.deepan.pieprogress.PieProgress
+        android:id="@+id/todayProgressPieComplete"
+        android:layout_width="30dp"
+        android:visibility="gone"
+        app:progressColor="@color/goalCenterCountText"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/todayProgressAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:textSize="14sp"
+        android:textAllCaps="true"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pieConstraintLayout"
+        />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toEndOf="@id/todayProgressAppName"
+        android:id="@+id/todayProgressAppIcon"
+        android:layout_marginStart="3dp"
+        app:layout_constraintTop_toTopOf="@id/todayProgressAppName"
+        />
+
+        <com.robinhood.ticker.TickerView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/todayProgressCompleted"
+            android:textStyle="bold"
+            android:textSize="23sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/todayProgressDeadline"
+            app:ticker_defaultCharacterList="alphabet"
+            app:ticker_animationDuration="1000"
+            app:ticker_defaultPreferredScrollingDirection="any"
+            android:layout_marginTop="15dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textSize="14sp"
+            android:id="@+id/todayProgressTotal"
+            android:layout_marginStart="3dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/todayProgressCompleted"
+            app:layout_constraintBottom_toBottomOf="@id/todayProgressCompleted"
+            android:layout_gravity="bottom"
+            />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/todayProgressAppName"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/todayProgressDeadline"
+        android:textColor="@color/darkGray"
+        android:fontFamily="@font/montserrat"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:textSize="12sp"
+        android:id="@+id/todayProgressType"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/todayProgressCompleted"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingHorizontal="13dp"
+        android:paddingVertical="3dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

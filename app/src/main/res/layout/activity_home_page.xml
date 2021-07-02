@@ -608,12 +608,10 @@
                     android:id="@+id/goalPreviewSeekBar"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
-                    app:dotWidth="1dp"
-
                     app:enableBackgroundDashEffect="true"
-
+                    app:progressWidth="3dp"
                     app:showDot="false"
-                    app:progressWidth="2dp"
+                    app:progressCap="round"
                     app:progressBackgroundWidth="1dp"
                     app:progressColor="@color/goalCenterCountText"
                     app:progressBackgroundColor="@color/mainBackground"
@@ -663,7 +661,7 @@
                     android:layout_marginTop="20dp"
                     >
 
-                    <com.randc.productivityapp.VerticalTextView
+                    <com.chandrachud.bubble.VerticalTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/goalPreviewType"
@@ -856,4 +854,4 @@
 
 
 </com.factor.bouncy.BouncyNestedScrollView>
-    ></jp.co.recruit_lifestyle.android.widget.WaveSwipeRefreshLayout>
+</jp.co.recruit_lifestyle.android.widget.WaveSwipeRefreshLayout>

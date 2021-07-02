@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.factor.bouncy.BouncyNestedScrollView
+
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,7 +10,28 @@
     app:overscroll_animation_size=".7"
     android:fitsSystemWindows="true"
     android:background="@color/mainBackground"
-    tools:context=".activities.GoalCenter">
+    tools:context=".activities.GoalCenter"
+    >
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/goals_add_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="20dp"
+        android:elevation="5dp"
+        android:id="@+id/addGoalButton"
+        />
+
+    <com.factor.bouncy.BouncyNestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:fling_animation_size=".7"
+    app:overscroll_animation_size=".7"
+    android:fitsSystemWindows="true"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -42,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
-                android:text="Goal "
+                android:text="Goal"
                 android:id="@+id/goalText"
                 android:layout_gravity="center_vertical"
                 android:textStyle="bold"
@@ -56,6 +78,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
                 android:text="Center"
+                android:layout_marginStart="5dp"
                 android:textColor="@color/darkGray"
                 android:textSize="33sp" />
 
@@ -64,7 +87,7 @@
         <com.github.mikephil.charting.charts.BarChart
             android:id="@+id/goalsDateChart"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="230dp"
             app:layout_constraintTop_toBottomOf="@id/goalHeadingLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -84,10 +107,321 @@
             android:background="@drawable/home_your_bubble_bg"
             >
 
+            <com.shunan.circularprogressbar.CircularProgressBar
+                android:layout_width="175dp"
+                android:layout_height="175dp"
+                android:id="@+id/goalCenterOverallBar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="15dp"
+                app:showDot="false"
+                app:progressCap="round"
+                app:progressBackgroundColor="@color/goalCenterCircleBackground"
+                app:progressColor="@color/goalCenterCircleMain"
+                app:progressBackgroundWidth="4dp"
+                app:progressWidth="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="17dp"
+                />
+
+            <com.shunan.circularprogressbar.CircularProgressBar
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/goalCenterNegativeBar"
+                app:layout_constraintStart_toStartOf="@id/goalCenterOverallBar"
+                app:layout_constraintTop_toTopOf="@id/goalCenterOverallBar"
+                app:layout_constraintEnd_toEndOf="@id/goalCenterOverallBar"
+                app:layout_constraintBottom_toBottomOf="@id/goalCenterOverallBar"
+                app:showDot="false"
+                app:progressCap="round"
+                app:progressBackgroundColor="@color/goalCenterCircleBackground"
+                app:progressColor="@color/goalCenterCircleNegative"
+                app:progressBackgroundWidth="4dp"
+                app:progressWidth="10dp"
+                android:layout_margin="17dp"
+                />
+
+            <com.shunan.circularprogressbar.CircularProgressBar
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/goalCenterPositiveBar"
+                app:layout_constraintStart_toStartOf="@id/goalCenterNegativeBar"
+                app:layout_constraintTop_toTopOf="@id/goalCenterNegativeBar"
+                app:layout_constraintEnd_toEndOf="@id/goalCenterNegativeBar"
+                app:layout_constraintBottom_toBottomOf="@id/goalCenterNegativeBar"
+                app:showDot="false"
+                app:progressCap="round"
+                app:cpb_progress="0"
+                app:progressBackgroundColor="@color/goalCenterCircleBackground"
+                app:progressColor="@color/goalCenterCirclePositive"
+                app:progressBackgroundWidth="4dp"
+                app:progressWidth="10dp"
+                android:layout_margin="17dp"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_marginStart="15dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/goalOverviewDescriptionLayout"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/goalCenterOverallBar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/overallOverviewLayout"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    >
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:id="@+id/overallOverviewCircle"
+                        android:background="@drawable/goal_overall_description"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:id="@+id/overallOverviewText"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/montserrat"
+                        app:layout_constraintStart_toEndOf="@id/overallOverviewCircle"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginStart="15dp"
+                        android:textSize="16sp"
+                        android:text="Overall"
+                        />
+
+                    <com.robinhood.ticker.TickerView
+                        android:id="@+id/overallOverviewPercent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:textColor="@color/goalCenterCircleMain"
+                        android:textSize="16sp"
+                        app:ticker_defaultCharacterList="alphabet"
+                        android:textStyle="bold"
+                        app:ticker_animationDuration="1000"
+                        app:ticker_defaultPreferredScrollingDirection="any"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/overallOverviewText"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/negativeOverviewLayout"
+                    app:layout_constraintTop_toBottomOf="@+id/overallOverviewLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="20dp"
+                    >
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:id="@+id/negativeOverviewCircle"
+                        android:background="@drawable/goal_negative_description"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:id="@+id/negativeOverviewText"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/montserrat"
+                        app:layout_constraintStart_toEndOf="@id/negativeOverviewCircle"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginStart="15dp"
+                        android:textSize="16sp"
+                        android:gravity="center"
+                        android:text="Negative\nEnergy"
+                        />
+
+                    <com.robinhood.ticker.TickerView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        app:ticker_animationDuration="1000"
+                        app:ticker_defaultPreferredScrollingDirection="any"
+                        app:ticker_defaultCharacterList="alphabet"
+                        android:id="@+id/negativeOverviewPercent"
+                        android:textColor="@color/goalCenterCircleNegative"
+                        app:layout_constraintStart_toEndOf="@id/negativeOverviewText"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginStart="20dp"
+                        android:textSize="16sp"
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/positiveOverviewLayout"
+                    app:layout_constraintTop_toBottomOf="@+id/negativeOverviewLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="20dp"
+                    >
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:id="@+id/positiveOverviewCircle"
+                        android:background="@drawable/goal_positive_description"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:id="@+id/positiveOverviewText"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/montserrat"
+                        app:layout_constraintStart_toEndOf="@id/positiveOverviewCircle"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginStart="15dp"
+                        android:textSize="16sp"
+                        android:gravity="center"
+                        android:text="Positive\nEnergy"
+                        />
+
+                    <com.robinhood.ticker.TickerView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        app:ticker_animationDuration="1000"
+                        app:ticker_defaultPreferredScrollingDirection="any"
+                        app:ticker_defaultCharacterList="alphabet"
+                        android:id="@+id/positiveOverviewPercent"
+                        android:textColor="@color/goalCenterCirclePositive"
+                        app:layout_constraintStart_toEndOf="@id/positiveOverviewText"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginStart="20dp"
+                        android:textSize="16sp"
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/todayProgressHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:textSize="21sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Today's Progress"
+            app:layout_constraintTop_toBottomOf="@+id/circleGraphLayout"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/todayProgressRecycler"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/todayProgressHeading"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_marginEnd="10dp"
+            />
+
+        <TextView
+            android:id="@+id/customGoalsHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/todayProgressRecycler"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:textSize="21sp"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="Custom Goals"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/customGoalsHeading"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="vertical"
+            android:nestedScrollingEnabled="false"
+            android:id="@+id/customGoalsRecycler"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="21sp"
+            android:id="@+id/goalsBubbleWalletHeading"
+            app:layout_constraintTop_toBottomOf="@id/customGoalsRecycler"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            android:text="Today's Bubble Wallet"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/goalsBubbleWalletHeading"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="100dp"
+            android:id="@+id/goalsBubbleWalletRecycler"
+            />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
 </com.factor.bouncy.BouncyNestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
