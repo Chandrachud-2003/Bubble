@@ -54,9 +54,7 @@ import jp.co.recruit_lifestyle.android.widget.WaveSwipeRefreshLayout;
 
 public class HomePage extends AppCompatActivity {
 
-    private String testAutomation = "I am testing the github automation";
-    private String test2;
-    private String test3;
+    private boolean githubTest = true;
 
     // Top Bar
     private ImageButton menuButton;
