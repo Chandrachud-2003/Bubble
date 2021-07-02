@@ -56,6 +56,7 @@ public class HomePage extends AppCompatActivity {
 
     private String testAutomation = "I am testing the github automation";
     private String test2;
+    private String test3;
 
     // Top Bar
     private ImageButton menuButton;
