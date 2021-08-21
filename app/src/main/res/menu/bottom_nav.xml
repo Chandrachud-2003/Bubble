@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/dashboard"
+        android:icon="@drawable/dashboard"
+        android:title="Dashboard"
+        android:color="@color/goalCenterCountText"
+        />
+
+    <item
+        android:id="@+id/goalCenter"
+        android:icon="@drawable/goal_center"
+        android:title="Goal Center"
+        android:color="@color/goalCenterGreen"
+        />
+
+    <item
+        android:id="@+id/timer"
+        android:icon="@drawable/timer"
+        android:title="Timer"
+        android:color="@color/timerPurple" />
+
+    <item
+        android:id="@+id/yourApps"
+        android:icon="@drawable/your_apps"
+        android:title="Your Apps"
+        android:color="@color/yourAppsRed" />
+
+    <item
+        android:id="@+id/premium"
+        android:icon="@drawable/premium"
+        android:title="Premium"
+        android:color="@color/premiumYellow" />
+
+</menu>

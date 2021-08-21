@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.chandrachud.bubble.HelperClasses.BottomNav;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.gelitenight.waveview.library.WaveView;
@@ -42,6 +43,7 @@ import com.chandrachud.bubble.Items.goalPreviewItem;
 import com.chandrachud.bubble.Items.homeDateItem;
 import com.chandrachud.bubble.Items.yourBubblePreviewItem;
 import com.chandrachud.bubble.R;
+import com.irfaan008.irbottomnavigation.SpaceNavigationView;
 import com.shunan.circularprogressbar.CircularProgressBar;
 import com.thekhaeng.pushdownanim.PushDownAnim;
 
@@ -59,7 +61,7 @@ public class HomePage extends AppCompatActivity {
     // Top Bar
     private ImageButton menuButton;
     private ImageButton statisticsButton;
-    private SideNavClass mSideNavClass;
+    private BottomNav bottomNav;
     private WaveSwipeRefreshLayout waveSwipeRefreshLayout;
 
     //Date Recycler
@@ -113,6 +115,7 @@ public class HomePage extends AppCompatActivity {
     private TextView allGoalsButton;
     private CircularProgressBar goalsPreviewBar;
     private ImageView goalsPreviewImage;
+
     private TextView goalsPreviewName;
     private TextView goalsPreviewTime;
     private TextView goalsPreviewType;
@@ -132,15 +135,17 @@ public class HomePage extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
+        Constants.setupBottomNav(savedInstanceState, HomePage.this);
         findViewsById(savedInstanceState);
         setOnClickListeners();
         setupSwipeToRefreshLayout();
-        setupDateRecycler();
+        //setupDateRecycler();
         setupYourBubbleCard();
         setupLineCharts();
         setupGoalsCard();
@@ -148,11 +153,6 @@ public class HomePage extends AppCompatActivity {
     }
 
     private void findViewsById(Bundle savedInstanceState){
-        menuButton = findViewById(R.id.menuButton);
-        statisticsButton = findViewById(R.id.statisticsButton);
-        dateRecycler = findViewById(R.id.dateRecycler);
-        nameView = findViewById(R.id.mainNameView);
-        //yourBubbleCard = findViewById(R.id.yourBubbleElasticCard);
         pBubble = findViewById(R.id.positiveBubble);
         nBubble = findViewById(R.id.negativeBubble);
         positivePreviewLayout = findViewById(R.id.positiveBubblePreviewLayout);
@@ -189,28 +189,6 @@ public class HomePage extends AppCompatActivity {
         customTaskPager = findViewById(R.id.customTaskViewpager);
         customTaskTabLayout = findViewById(R.id.customTaskViewpagerTabLayout);
         waveSwipeRefreshLayout = findViewById(R.id.main_swipe);
-
-        mSideNavClass = new SideNavClass(HomePage.this, savedInstanceState, Constants.homePageActivity);
-        mSideNavClass.setUpSideNav();
-
-        /*positivePreviewBubble.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                positivePreviewBubble.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                int w = positivePreviewBubble.getWidth();
-                int h = positivePreviewBubble.getHeight();
-
-                positivePreviewBubble.setRotation(90.0f);
-
-
-                ViewGroup.LayoutParams lp = positivePreviewBubble.getLayoutParams();
-                lp.height = h;
-                lp.width = h;
-                positivePreviewBubble.requestLayout();
-            }
-        });*/
-
-
 
     }
 
@@ -267,12 +245,7 @@ public class HomePage extends AppCompatActivity {
         dateRecycler.setAdapter(mHomeDateAdapter);
     }
 
-    private void setupYourBubbleCard(){
-
-        //Name Text
-        nameView.setText("Chandrachud "+getEmojiByUnicode(0x1F44B));
-
-        //Elastic Card
+    private void setupYourBubbleCard() {
 
         //Positive and Negative Bubble
         pBubble.setShapeType(WaveView.ShapeType.CIRCLE);
@@ -286,9 +259,6 @@ public class HomePage extends AppCompatActivity {
         nHelper = new WaveHelper(nBubble, nProgress, 3000, 5000);
         pHelper.start();
         nHelper.start();
-
-        //Bubble Emitter
-        emitBubbles();
 
         //Positive and Negative preview
         positivePreviewBubble.setShapeType(WaveView.ShapeType.SQUARE);
@@ -550,10 +520,6 @@ public class HomePage extends AppCompatActivity {
 
                     }
                 }).attach();
-    }
-
-    private void emitBubbles() {
-
     }
 
     public static void customView(View v, int backgroundColor, int cornerRadii) {

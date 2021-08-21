@@ -4,10 +4,13 @@
     <color name="colorPrimaryDark">#FFFFFF</color>
     <color name="colorAccent">#03DAC5</color>
 
+    <color name="color_accent">#FFFFFF</color>
+    <color name="background">#19191E</color>
+
     <color name="transparent">#00FFFFFF</color>
 
-    <color name="mainBackground">#0A0F2D</color>
-    <color name="mainBackgroundLight">#1A1F3D</color>
+    <color name="mainBackground">#090C1C</color>
+    <color name="mainBackgroundLight">#14182B</color>
 
     <color name="menuNotSelected">#707cc2</color>
 
@@ -133,6 +136,11 @@
     <color name="goalCenterCircleMain">#3169DD</color>
     <color name="goalCenterCircleNegative">#FA7449</color>
     <color name="goalCenterCirclePositive">#62F0F3</color>
+
+    <color name="premiumYellow">#FBD32C</color>
+    <color name="yourAppsRed">#FB232F</color>
+    <color name="timerPurple">#684AFF</color>
+    <color name="goalCenterGreen">#21e8c7</color>
 
 
 

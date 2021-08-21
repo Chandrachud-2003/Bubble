@@ -74,7 +74,6 @@ public class SideNavClass {
         findViewsById();
         setUpButtonAppearences();
         setUpOnClickListeners();
-
     }
 
     private void findViewsById()
@@ -285,23 +284,6 @@ public class SideNavClass {
     private void setUpOnClickListeners()
     {
 
-        PushDownAnim.setPushDownAnimTo(menuButton)
-                .setScale(PushDownAnim.MODE_SCALE, 0.8f)
-                .setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        slidingRootNav.openMenu();
-
-                    }
-                });
-        /* menuButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                slidingRootNav.openMenu();
-
-            }
-        });*/
 
         homeLayout.setOnClickListener(new View.OnClickListener() {
             @Override

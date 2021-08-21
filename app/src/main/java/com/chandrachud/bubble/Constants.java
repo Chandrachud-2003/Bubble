@@ -1,6 +1,13 @@
 package com.chandrachud.bubble;
 
+import android.app.Activity;
+import android.os.Bundle;
+
+import com.chandrachud.bubble.HelperClasses.BottomNav;
 import com.chandrachud.bubble.Items.customTaskItem;
+import com.chandrachud.bubble.activities.HomePage;
+import com.irfaan008.irbottomnavigation.SpaceItem;
+import com.irfaan008.irbottomnavigation.SpaceNavigationView;
 
 public class Constants {
 
@@ -37,8 +44,17 @@ public class Constants {
             new customTaskItem(R.drawable.meditation_vector, "Meditation Session - ", 0),
             new customTaskItem(R.drawable.studying_vector, "Study Session - ", 0),
             new customTaskItem(R.drawable.workout_vector, "Workout Session - ", 0),
-
     };
+
+    public static void setupBottomNav(Bundle savedInstanceState, Activity activity) {
+        SpaceNavigationView spaceNavigationView = (SpaceNavigationView) activity.findViewById(R.id.bottomNavigation);
+        spaceNavigationView.initWithSaveInstanceState(savedInstanceState);
+        spaceNavigationView.showIconOnly();
+        spaceNavigationView.addSpaceItem(new SpaceItem("Dashboard", R.drawable.dashboard));
+        spaceNavigationView.addSpaceItem(new SpaceItem("Goal Center", R.drawable.goal_center));
+        spaceNavigationView.addSpaceItem(new SpaceItem("Your Apps", R.drawable.your_apps));
+        spaceNavigationView.addSpaceItem(new SpaceItem("Premium", R.drawable.premium));
+    }
 
 
 

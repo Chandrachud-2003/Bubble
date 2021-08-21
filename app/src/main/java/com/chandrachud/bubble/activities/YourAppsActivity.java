@@ -135,24 +135,14 @@ public class YourAppsActivity extends AppCompatActivity implements com.chandrach
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_your_apps);
 
+        Constants.setupBottomNav(savedInstanceState, YourAppsActivity.this);
         checkForPermissions();
-
         findViewsById(savedInstanceState);
-
         setPositiveEmptyAnimation(true);
         setNegativeEmptyAnimation(true);
-
-
         setUpSharedPreferences();
-
         setUpAddAppsRecycler();
-
         setUpOnClickListeners();
-
-
-
-
-
     }
 
 

@@ -52,24 +52,16 @@ public class TimerActivity extends AppCompatActivity {
 
             getWindow().setNavigationBarColor(getResources().getColor(R.color.white));
             getWindow().setStatusBarColor(getResources().getColor(R.color.white));
-
-
         }
-
 
         setContentView(R.layout.activity_timer);
 
+        Constants.setupBottomNav(savedInstanceState, TimerActivity.this);
         findViewsById(savedInstanceState);
-
         setUpClickListeners();
-
         setUpTimer();
-
         setUpTimerWave();
-
         setUpTimerSeekBar();
-
-
     }
 
     private void findViewsById(Bundle bundle)

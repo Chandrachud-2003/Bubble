@@ -93,6 +93,7 @@ public class GoalCenter extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goal_center);
 
+        Constants.setupBottomNav(savedInstanceState, GoalCenter.this);
         findViewsById(savedInstanceState);
         setOnClickListeners();
         setupBarChart();

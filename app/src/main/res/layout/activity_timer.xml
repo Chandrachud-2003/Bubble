@@ -7,6 +7,7 @@
     android:background="@color/mainBackground"
     tools:context=".activities.TimerActivity">
 
+
     <com.scwang.wave.MultiWaveHeader
         android:id="@+id/timerWave"
         android:layout_width="match_parent"
@@ -104,17 +105,4 @@
         android:layout_marginStart="25dp"
 
         />
-
-
-
-
-
-
-
-
-
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
